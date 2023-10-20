@@ -1,7 +1,12 @@
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy --set-env-vars NEXT_PUBLIC_CONTRACT_ADDRESS=$$NEXT_PUBLIC_CONTRACT_ADDRESS']
+  args: 
+    - '-c'
+    - |
+      echo $'\n  NEXT_PUBLIC_CONTRACT_ADDRESS: '$$NEXT_PUBLIC_CONTRACT_ADDRESS >> app.yaml
+      gcloud -q app deploy
+
   secretEnv: ['NEXT_PUBLIC_CONTRACT_ADDRESS']
 availableSecrets:
   secretManager:

@@ -1,5 +1,10 @@
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
+  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy --set-env-vars NEXT_PUBLIC_CONTRACT_ADDRESS=$$NEXT_PUBLIC_CONTRACT_ADDRESS']
+  secretEnv: ['NEXT_PUBLIC_CONTRACT_ADDRESS']
+availableSecrets:
+  secretManager:
+  - versionName: projects/joc-token-vesting-dev/secrets/ADMINISTRATOR_NEXT_PUBLIC_CONTRACT_ADDRESS/versions/latest
+    env: 'NEXT_PUBLIC_CONTRACT_ADDRESS'
 timeout: '1600s'

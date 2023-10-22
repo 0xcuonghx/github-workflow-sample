@@ -10,4 +10,3 @@ build_env_variables:
   GOOGLE_NODE_RUN_SCRIPTS: ''
 env_variables:
   CLOUD_SERVICE_PROVIDER: 'gcloud'
-  NEXT_PUBLIC_CHAIN_ID: "##NEXT_PUBLIC_CHAIN_ID##"

@@ -5,7 +5,7 @@ steps:
   args: 
   - -c
   - |
-    echo $'\n  NEXT_PUBLIC_CHAIN_ID: '$$ADMINISTRATOR_NEXT_PUBLIC_CHAIN_ID >> app.yaml
+    echo $'\n  NEXT_PUBLIC_CHAIN_ID: ''$$ADMINISTRATOR_NEXT_PUBLIC_CHAIN_ID' >> app.yaml
     gcloud -q app deploy
 availableSecrets:
   secretManager:

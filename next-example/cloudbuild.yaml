@@ -9,6 +9,6 @@ steps:
     gcloud -q app deploy
 availableSecrets:
   secretManager:
-  - versionName: projects/joc-token-vesting-dev/secrets/ADMINISTRATOR_NEXT_PUBLIC_CHAIN_ID/versions/latest
+  - versionName: projects/joc-token-vesting-dev/secrets/ADMINISTRATOR_NEXT_PUBLIC_CONTRACT_ADDRESS/versions/latest
     env: 'ADMINISTRATOR_NEXT_PUBLIC_CHAIN_ID'
 timeout: '1600s'
